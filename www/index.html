@@ -1,0 +1,159 @@
+<html class="ui-mobile"><head><base href="file:///E:/index.html">
+<meta charset="”utf-8?">
+<meta name="”format-detection”" content="”telephone=no”">
+<meta name="”msapplication-tap-highlight”" content="”no”">
+<meta name="”viewport”" content="”user-scalable=no," initial-scale="1," maximum-scale="1," minimum-scale="1," width="device-width”">
+<meta http-equiv="”Content-Security-Policy”" content="”default-src" *="" ‘unsafe-inline’;="" style-src="" ‘self’="" media-src="" *”="">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+<title>kermo super leht 2000 super legit maailma parim leht doge approved tegelt ka see on avalik on ikka palju teksti siin kui sa saad seda lugeda on sul supervõimed edasi on mingit jama et see tuleks pikk gpdrmgodngoddngifpsddfghjkkjigieshfoskdfhbsfsffflansmodhjg0eih0hgodjgpodjgodhgdjndhgdjgdjgdhgttumobileappspunktwordpresspunktcomiur9hthosht98yt9uterhgihbt83t0wjtjingiu9dgh0t0pt</title>
+
+<style>
+	table, td{
+		border: solid;
+	}
+	
+	table{
+		border-color: red;
+	}
+	
+	td{
+		width: 16vw;
+		height: 16vw;
+	}
+	
+	.player{
+		background-color: red;
+	}
+	
+	.treasure{
+		background-color: yellow;
+	}
+	
+	
+	
+</style></head>
+
+
+<body class="ui-mobile-viewport ui-overlay-a"><div data-role="page" data-url="/E:/index.html" tabindex="0" class="ui-page ui-page-theme-a ui-page-active">
+	<center>
+		<h1>Game</h1>
+		<p>Score: <text id="score">0</text></p>
+            		
+		<table>
+			<tbody><tr><td id="11" class=""></td><td id="12" class=""></td><td id="13" class=""></td><td id="14" class=""></td><td id="15"></td></tr>
+			<tr><td id="21" class=""></td><td id="22" class=""></td><td id="23" class=""></td><td id="24" class=""></td><td id="25" class=""></td></tr>
+			<tr><td id="31" class=""></td><td id="32" class=""></td><td id="33" class=""></td><td id="34" class=""></td><td id="35" class=""></td></tr>
+			<tr><td id="41" class=""></td><td id="42" class=""></td><td id="43" class=""></td><td id="44" class=""></td><td id="45" class=""></td></tr>
+			<tr><td id="51" class=""></td><td id="52" class=""></td><td id="53" class=""></td><td id="54" class=""></td><td id="55" class=""></td></tr>
+		</tbody></table>
+		
+		<button id="up" class=" ui-btn ui-shadow ui-corner-all">Up</button>
+		<button id="down" class=" ui-btn ui-shadow ui-corner-all">Down</button>
+		<button id="right" class=" ui-btn ui-shadow ui-corner-all">Right</button>
+		<button id="left" class=" ui-btn ui-shadow ui-corner-all">Left</button>
+	</center>
+
+
+<script>
+	var playerPosX;
+	var playerPosY;
+	
+	var treasurePosX;
+	var treasurePosY;
+	
+	var score = 0;
+
+	function getRandomNumber(intFrom, intTo){
+		return Math.floor((Math.random() * intTo) + intFrom);
+	}
+	
+	function getPlayerPosId(){
+		return playerPosY.toString() + playerPosX.toString();
+	}
+	
+	function updatePlayerPos(){
+		var idOfPos = playerPosY.toString() + playerPosX.toString();
+		$("#" + idOfPos).addClass("player");
+	}
+	
+	function spawnTreasure(){
+		treasurePosX = getRandomNumber(1, 5);
+		treasurePosY = getRandomNumber(1, 5);
+		var idOfPos = treasurePosY.toString() + treasurePosX.toString();
+		$("#" + idOfPos).addClass("treasure");
+	}
+	
+    function addPoints(){
+        if(playerPosX == treasurePosX && playerPosY == treasurePosY){
+            score += 1;
+            var idOfPos = treasurePosY.toString() + treasurePosX.toString();
+            $("#" + idOfPos).removeClass("treasure");
+            $("#score").html(score);
+            spawnTreasure();
+            
+        }
+    }
+	
+	playerPosX = getRandomNumber(1, 5);
+	playerPosY = getRandomNumber(1, 5);	
+	
+	$("#" + getPlayerPosId()).addClass("player");
+	
+	spawnTreasure();
+	
+	$("#up").click(
+		function(){
+			$("#" + getPlayerPosId()).removeClass("player");
+			playerPosY -= 1;
+			if(playerPosY == 0){
+				playerPosY = 5;
+			}
+			updatePlayerPos();
+            addPoints();
+		}
+	);
+	
+	$("#down").click(
+		function(){
+	 		$("#" + getPlayerPosId()).removeClass("player");
+			playerPosY += 1;
+			if(playerPosY == 6){
+				playerPosY = 1;
+			}
+			updatePlayerPos();
+            addPoints();
+		}
+	);
+	
+	$("#right").click(
+		function(){
+			$("#" + getPlayerPosId()).removeClass("player");
+			playerPosX += 1;
+			if(playerPosX == 6){
+				playerPosX = 1;
+			}
+			updatePlayerPos();
+            addPoints();
+		}
+	);
+	
+	$("#left").click(
+		function(){
+			$("#" + getPlayerPosId()).removeClass("player");
+			playerPosX -= 1;
+			if(playerPosX == 0){
+				playerPosX = 5;
+			}
+			updatePlayerPos();
+            addPoints();
+		}
+	);
+
+	
+	
+</script>
+
+</div><div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon-loading"></span><h1>loading</h1></div></body></html>
